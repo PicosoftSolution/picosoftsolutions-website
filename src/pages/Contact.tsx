@@ -12,7 +12,7 @@ const DETAILS = [
   {
     icon: Phone,
     label: "PHONE",
-    value: "+91 93905 00486",
+    value: "+91 90101 30777",
   },
   {
     icon: MapPin,

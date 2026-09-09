@@ -8,6 +8,33 @@ const NAVIGATE = [
   { href: "/contact", label: "Contact" },
 ];
 
+// Inline logo mark — no external file needed, so it never breaks.
+function LogoMark() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      className="h-7 w-7 shrink-0"
+      aria-hidden="true"
+    >
+      <rect width="28" height="28" rx="7" fill="#14E0C9" />
+      <text
+        x="50%"
+        y="52%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontFamily="inherit"
+        fontWeight="700"
+        fontSize="13"
+        fill="#05080f"
+      >
+        P
+      </text>
+    </svg>
+  );
+}
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -16,13 +43,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Link to="/" className="flex items-center gap-2.5">
-              <img
-                src="/logo-mark.png"
-                alt="PicoSoft Solutions logo"
-                width={28}
-                height={28}
-                className="h-7 w-7"
-              />
+              <LogoMark />
               <span className="font-display text-base font-semibold text-white">
                 PicoSoft <span className="text-teal">Solutions</span>
               </span>

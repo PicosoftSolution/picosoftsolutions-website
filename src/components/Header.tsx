@@ -44,8 +44,8 @@ export default function Header() {
             className="h-[30px] w-[30px]"
           />
           <span className="font-display text-lg font-semibold tracking-tight text-white">
-            Pico<span className="text-teal">Soft</span>
-          </span>
+            PicoSoft<span className="text-teal"> Solutions</span>
+          </span> 
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
