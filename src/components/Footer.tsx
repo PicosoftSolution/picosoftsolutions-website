@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-sm text-white/50">
                 <Phone size={15} className="text-teal shrink-0" />
-                +91 90101 30777
+                +91 90101 30777 +91 9010730777
               </li>
               <li className="flex items-center gap-2 text-sm text-white/50">
                 <MapPin size={15} className="text-teal shrink-0" />
