@@ -10,6 +10,32 @@ const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
+function LogoMark() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      className="h-7 w-7 shrink-0"
+      aria-hidden="true"
+    >
+      <rect width="28" height="28" rx="7" fill="#14E0C9" />
+      <text
+        x="50%"
+        y="52%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontFamily="inherit"
+        fontWeight="700"
+        fontSize="13"
+        fill="#05080f"
+      >
+        P
+      </text>
+    </svg>
+  );
+}
+
 export default function Header() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
@@ -35,18 +61,12 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-page items-center justify-between px-6 py-4 lg:px-10">
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <img
-            src="/logo-mark.png"
-            alt="PicoSoft Solutions logo"
-            width={30}
-            height={30}
-            className="h-[30px] w-[30px]"
-          />
-          <span className="font-display text-lg font-semibold tracking-tight text-white">
-            PicoSoft<span className="text-teal"> Solutions</span>
-          </span> 
-        </Link>
+        <Link to="/" className="flex items-center gap-2.5">
+                      <LogoMark />
+                      <span className="font-display text-base font-semibold text-white">
+                        PicoSoft <span className="text-teal">Solutions</span>
+                      </span>
+                    </Link>
 
         <nav className="hidden items-center gap-9 md:flex">
           {NAV_LINKS.map((link) => {
