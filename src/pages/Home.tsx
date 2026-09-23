@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Layers, Quote } from "lucide-react";
 import HeroGlow from "../components/HeroGlow";
@@ -5,9 +6,12 @@ import Reveal from "../components/Reveal";
 import Icon from "../components/Icon";
 import type { IconName } from "../components/Icon";
 import PageTitle from "../components/PageTitle";
+import ContactModal from "../components/ContactModal";
 import { services, testimonials, caseStudies, stats } from "../lib/data";
 
 export default function HomePage() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <PageTitle
@@ -37,9 +41,9 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.24}>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Link to="/contact" className="btn-primary">
+              <button onClick={() => setShowModal(true)} className="btn-primary">
                 Let&rsquo;s build your app <ArrowRight size={16} />
-              </Link>
+              </button>
               <Link to="/services" className="btn-secondary">
                 Explore services
               </Link>
@@ -50,7 +54,7 @@ export default function HomePage() {
             <div className="mt-16 grid grid-cols-2 gap-8 border-t border-white/[0.08] pt-10 sm:grid-cols-4">
               {stats.map((s) => (
                 <div key={s.label}>
-                  <p className="font-display text-3xl font-semibold text-white sm:text-4xl">
+                  <p className="font-display text-3xl font-semibold text-[#14E0C9]  sm:text-4xl">
                     {s.value}
                   </p>
                   <p className="mt-1 text-sm text-white/45">{s.label}</p>
@@ -274,12 +278,14 @@ export default function HomePage() {
             </h2>
           </Reveal>
           <Reveal delay={0.18}>
-            <Link to="/contact" className="btn-primary mt-8">
+            <button onClick={() => setShowModal(true)} className="btn-primary mt-8">
               Contact us <ArrowRight size={16} />
-            </Link>
+            </button>
           </Reveal>
         </div>
       </section>
+
+      <ContactModal open={showModal} onClose={() => setShowModal(false)} />
     </>
   );
 }

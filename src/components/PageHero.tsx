@@ -1,4 +1,3 @@
-import HeroGlow from "./HeroGlow";
 import Reveal from "./Reveal";
 import type { ReactNode } from "react";
 
@@ -14,8 +13,7 @@ export default function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative border-b border-white/[0.06] overflow-hidden">
-      <HeroGlow />
+    <section className="relative border-b border-white/[0.06] overflow-hidden bg-[#05080f]">
       <div className="relative mx-auto max-w-page px-6 pb-16 pt-20 lg:px-10 lg:pb-24 lg:pt-24">
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>

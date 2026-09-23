@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import ContactModal from "./ContactModal";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -40,6 +41,7 @@ export default function Header() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -87,9 +89,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <Link to="/contact" className="btn-primary">
+          <button onClick={() => setShowModal(true)} className="btn-primary">
             Start a project
-          </Link>
+          </button>
         </div>
 
         <button
@@ -120,11 +122,16 @@ export default function Header() {
               );
             })}
           </nav>
-          <Link to="/contact" className="btn-primary mt-4 w-full justify-center">
+          <button
+            onClick={() => setShowModal(true)}
+            className="btn-primary mt-4 w-full justify-center"
+          >
             Start a project <ArrowRight size={16} />
-          </Link>
+          </button>
         </div>
       )}
+
+      <ContactModal open={showModal} onClose={() => setShowModal(false)} />
     </header>
   );
 }

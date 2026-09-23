@@ -108,16 +108,16 @@ export const caseStudies = [
 
 export const testimonials = [
   {
+    name: "Prashanth",
+    role: "Founder & CEO, Nuevata Innovations",
     quote:
-      "We have been working with Pico Soft Solutions for the past 5 years. They have been dedicated and helped us create applications that reached our business goals.",
-    name: "Operations Director",
-    role: "Logistics platform client",
+      "Picosoft gave us what a deep-tech startup actually needs: clean engineering, clear communication, and a team that understood our problem before writing code. A reliable partner, recommended.",
   },
   {
+    name: "Sree Venugopal",
+    role: "Founder, Dunamis",
     quote:
-      "Excellent team and great work. They understood our ideas and unleashed their creativity and innovation in developing our business applications.",
-    name: "Founder",
-    role: "SaaS product client",
+      "We are associated with Pico Soft Solutions since more than 5 years. We are very happy with the services provided by your team. Their professionalism, technical expertise, timely support, and commitment to quality have been excellent. We appreciate their support and look forward to continuing our association.",
   },
 ];
 
